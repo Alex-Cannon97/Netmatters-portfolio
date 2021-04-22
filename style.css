@@ -12,6 +12,45 @@
 	border-right: 3px solid #50b0c9;
 }
 
+.tab-btn{
+	position: fixed;
+	top: 40%;
+	visibility: hidden;
+}
+
+.hid-btn{
+	height: 90px;
+	width: 40px;
+	position: relative;
+	background-color: white;
+	font-family: sans-serif;
+	font-size: 13px;
+	font-weight: 600;
+	border: 2px solid #50b0c9;
+	border-radius: 3px;	
+}
+
+.hid-btn p{
+	position: absolute;
+	writing-mode: vertical-rl;
+	text-orientation: upright;
+	top: 4%;
+	left:30%;
+}
+
+.hid-btn i{
+	position: absolute;
+	top: 80%;
+	left: 27%;
+	font-size: 13px;
+}
+
+@media all and (max-width: 390px){
+	.tab-btn{
+		visibility: visible;
+	}
+}
+
 .content{
 	margin-left: 200px;
 	margin-right: 50px;
@@ -27,6 +66,7 @@
 	display: flex;
 	justify-content: center;
 	place-items: center;
+	line-height: 3;
 	font-family: sans-serif;
 	border-bottom: 3px solid #50b0c9;
 
@@ -293,10 +333,6 @@ textarea{
 
 .about{
 	text-align: center;
-}
-
-.aboutme{
-	/*background-color: #f5f3f0;*/
 }
 
 .coding{
