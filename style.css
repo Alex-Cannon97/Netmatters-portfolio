@@ -16,6 +16,7 @@
 	position: fixed;
 	top: 40%;
 	visibility: hidden;
+	z-index: 1;
 }
 
 .hid-btn{
