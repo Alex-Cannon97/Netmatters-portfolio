@@ -227,7 +227,7 @@ i{
 	color: white;
 }
 
-.projects{
+.containing-pro{
 	margin-top: 100px;
 	display: flex;
 	flex-wrap: wrap;
@@ -238,24 +238,24 @@ i{
 	margin-left: -20px;
 }
 
-.projects img{
+.containing-pro img{
 	width: 100%;
 }
 
-.projects h2{
+.containing-pro h2{
 	font-family: sans-serif;
 	font-weight: 600;
 	margin-bottom: 15px;
 	color: black;
 }
 
-.projects span{
+.containing-pro span{
 	font-family: sans-serif;
 	color: black;
 	font-size: 16px;
 }
 
-.projects a{
+.containing-pro a{
 	text-decoration: none;
 	flex-basis: 390px;
 	flex-grow: 1;
@@ -264,10 +264,28 @@ i{
 
 }
 
-.projects i{
+.containing-pro i{
 	color: black;
 	margin-bottom: 50px;
 	font-size: 14px;
+}
+
+/*.containing-pro{
+	position: relative;
+}*/
+
+.details{
+	position: absolute;
+	right: 2%;
+	cursor: pointer;
+	background-color: white;
+	width: 55px;
+	height: 20px;
+	border: 1px solid black;
+	border-radius: 3px;
+	font-size: 16px;
+	font-family: sans-serif;
+	align-self: flex-end;
 }
 
 .pro-img{
@@ -283,20 +301,42 @@ i{
 	visibility: hidden;
 }
 
-.projects a:hover .hidden-description{
+@media all and (max-width: 783px){
+	.hidden-description{
+		top:20%;
+		font-size: 20px;
+		font-weight:600;
+	}
+}
+
+@media all and (max-width: 637px){
+	.hidden-description{
+		font-size: 17px;
+	}
+}
+
+@media all and (max-width: 390px){
+	.hidden-description{
+		font-size: 15px;
+		top: 10%;
+		left: 10%;
+	}
+}
+
+.containing-pro a:hover .hidden-description{
 	visibility: visible;
 }
 
-.projects a:hover h2, .projects a:hover span, .projects a:hover i{
+.containing-pro a:hover h2, .containing-pro a:hover span, .containing-pro a:hover i{
 	color: grey;
 }
 
-.projects a:hover img{
+.containing-pro a:hover img{
 	box-shadow: 0 0 15px grey;
 	border-radius: 5px;
 }
 
-.projects a:hover .pro-img::before{
+.containing-pro a:hover .pro-img::before{
 	content: "";
 	width: 100%;
 	height: 99%;
@@ -446,22 +486,29 @@ textarea{
 
 .coding-box{
 	border: solid 3px black;
-	width: 400px;
 	position: relative;
-	display: flex;
+	max-width: 400px;
 }
 
 .example{
-	width: 300px;
 	text-align: left;
+}
+
+@media all and (max-width: 480px){
+	.coding .main-content{
+		margin:0;
+	}
+	.coding-box{
+		width: auto;
+	}
 }
 
 #example-1{
 	font-size: 20px;
 	text-decoration: underline;
-	text-align: left;
-	padding-left: 100px; 
+	text-align: center;
 	text-transform: none;
+	max-width: 400px;
 }
 
 .coding .explanation{
@@ -470,6 +517,12 @@ textarea{
 	width: 400px;
 	line-height: 20px;
 	margin-top: 10px;
+}
+
+.p-container{
+	max-width: 500px;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .SCS .hero{
