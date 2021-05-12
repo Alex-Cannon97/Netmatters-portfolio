@@ -10,6 +10,12 @@ const button2 = document.getElementsByClassName('hid-btn-2')[0];
 const menu = document.getElementsByClassName('side-nav')[0];
 //let hidden = menu.style.visibility === 'hidden';
 
+//variables coming up for the detail button.
+const detailbtn = document.getElementsByClassName('details')[0];
+const removebtn = document.getElementsByClassName('remove')[0];
+const popup = document.getElementsByClassName('detail-pop-up')[0];
+
+
 element.innerText = "";
 
 function typeWriter(){
@@ -39,3 +45,15 @@ button2.onclick = function(){
 	button2.classList.remove('show-button')
 	button1.classList.remove('hide-button')
 };
+
+detailbtn.onclick = function(){
+	popup.classList.add('show-popup')
+	detailbtn.classList.add('hide-btn')
+	removebtn.classList.add('show-btn')
+}
+
+removebtn.onclick = function(){
+	popup.classList.remove('show-popup')
+	removebtn.classList.remove('show-btn')
+	detailbtn.classList.remove('hide-btn')
+}
