@@ -299,7 +299,7 @@ i{
 	position: absolute;
 	top: 0%;
 	left: 23%;
-	overflow: scroll;
+	overflow: auto;
 	visibility: hidden;
 }
 
