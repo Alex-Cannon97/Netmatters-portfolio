@@ -184,7 +184,7 @@ i{
 
 .aboutme .hero{
 	width: auto;
-	height: 600px;
+	height: 100vh;
 	background-image: url('hero-img2.jpg');
 	background-size: cover;
 	margin-right:-50px;
@@ -194,7 +194,7 @@ i{
 
 .coding .hero{
 	width: auto;
-	height: 600px;
+	height: 100vh;
 	background-image: linear-gradient( rgb(0,0,0), rgba(0,0,0,.0)),url('hero-img3.jpg');
 	background-size: cover;
 	margin-right:-50px;
@@ -315,7 +315,7 @@ i{
 	visibility: visible;
 }
 
-.containing-pro a:hover h2, .containing-pro:hover span, .containing-pro:hover i{
+.containing-pro:hover h2, .containing-pro:hover span, .containing-pro:hover i{
 	color: grey;
 }
 
@@ -515,7 +515,7 @@ textarea{
 
 .SCS .hero{
 	width: auto;
-	height: 900px;
+	height: 100vh;
 	background-image:url('hero-net.jpg');
 	background-size: cover;
 	margin-right:-50px;
@@ -654,4 +654,18 @@ textarea{
 
 .hide-btn{
 	visibility: hidden;
+}
+
+.acc-overlay{
+	height: 1000px;
+	background-color: blue;
+	width: 414px;
+	z-index: 10;
+	position: absolute;
+}
+
+.p-container:hover .acc-overlay{
+	max-height: 0;
+	opacity: 0;
+	transition: max-height 2s ease-in-out;
 }
