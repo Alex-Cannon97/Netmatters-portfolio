@@ -497,6 +497,7 @@ textarea{
 	text-align: center;
 	text-transform: none;
 	max-width: 400px;
+	position: relative;
 }
 
 .coding .explanation{
@@ -657,15 +658,24 @@ textarea{
 }
 
 .acc-overlay{
-	height: 1000px;
-	background-color: blue;
+	height: 0px;
+	background-color: white;
 	width: 414px;
 	z-index: 10;
-	position: absolute;
+	overflow: hidden;
+	transition: .4s ease-in-out;
 }
 
-.p-container:hover .acc-overlay{
-	max-height: 0;
-	opacity: 0;
-	transition: max-height 2s ease-in-out;
+.show-example{
+	height: 1000px !important;
+}
+
+.accordion-btn{
+	width: 50px;
+	height: 20px;
+	margin-left: 15px;
+	background: white;
+	border: 1px solid black;
+	border-radius: 4px;
+	cursor: pointer;
 }

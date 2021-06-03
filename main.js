@@ -11,9 +11,11 @@ const menu = document.getElementsByClassName('side-nav')[0];
 //let hidden = menu.style.visibility === 'hidden';
 
 //variables coming up for the detail button.
-const detailbtn = document.getElementsByClassName('details')[0];
+const detailBtn = document.querySelector('.details');
 const removebtn = document.getElementsByClassName('remove')[0];
 const popup = document.getElementsByClassName('detail-pop-up')[0];
+const accordionBtn = document.querySelector('.accordion-btn');
+const accordionOverlay = document.querySelector('.acc-overlay');
 
 
 element.innerText = "";
@@ -30,30 +32,35 @@ window.addEventListener('load', typeWriter);
 
 
 button1.onclick = function(){
-	menu.classList.add('show-this-menu')
+	menu.classList.add('show-this-menu');
 	console.log('working');
-	button1.classList.add('hide-button')
-	button2.classList.add('show-button')
-	button2.classList.remove('hide-button')
-	button1.classList.remove('show-button')
+	button1.classList.add('hide-button');
+	button2.classList.add('show-button');
+	button2.classList.remove('hide-button');
+	button1.classList.remove('show-button');
 };
 
 button2.onclick = function(){
-	menu.classList.remove('show-this-menu')
-	button2.classList.add('hide-button')
-	button1.classList.add('show-button')
-	button2.classList.remove('show-button')
-	button1.classList.remove('hide-button')
+	menu.classList.remove('show-this-menu');
+	button2.classList.add('hide-button');
+	button1.classList.add('show-button');
+	button2.classList.remove('show-button');
+	button1.classList.remove('hide-button');
 };
 
-detailbtn.onclick = function(){
-	popup.classList.add('show-popup')
-	detailbtn.classList.add('hide-btn')
-	removebtn.classList.add('show-btn')
-}
+detailBtn.onclick = function(){
+	popup.classList.add('show-popup');
+	detailBtn.classList.add('hide-btn');
+	removebtn.classList.add('show-btn');
+};
 
 removebtn.onclick = function(){
-	popup.classList.remove('show-popup')
-	removebtn.classList.remove('show-btn')
-	detailbtn.classList.remove('hide-btn')
-}
+	popup.classList.remove('show-popup');
+	removebtn.classList.remove('show-btn');
+	detailBtn.classList.remove('hide-btn');
+};
+
+accordionBtn.onclick = function(){
+	accordionOverlay.classList.toggle('show-example');
+	console.log('btn working');
+};
