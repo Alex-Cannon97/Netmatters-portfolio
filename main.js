@@ -1,3 +1,7 @@
+window.onload = function(){
+	console.log(detailBtn)
+}
+
 var i = 0;
 var element = document.getElementsByClassName('text-effect')[0];
 var txt = element.innerText; //at this point I want txt to be set to any corresponding text values with the class 'text-effect'
@@ -57,16 +61,27 @@ function check(){
 		}
 	}
 }
+ accordionBtn.addEventListener('click', check)
 
-
+function modalPop(){
+if (detailBtn != null) {
 detailBtn.onclick = function(){
 modal.style.display = "block";
 console.log("modal should work")
 }
+}
+}
+detailBtn.addEventListener('click', modalPop)
 
+function modalCheck(){
+	if(modalClose != null){
 modalClose.onclick = function(){
 	modal.style.display = "none";
 }
+}
+}
+
+modalClose.addEventListener('click', modalCheck)
 
 window.onclick = function(event){
 	if (event.target == modal){
