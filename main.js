@@ -12,7 +12,8 @@ const menu = document.getElementsByClassName('side-nav')[0];
 
 //variables coming up for the detail button.
 const detailBtn = document.querySelector('.details');
-const removebtn = document.getElementsByClassName('remove')[0];
+const modal = document.querySelector('#myModal')
+const modalClose = document.querySelector('.closer-btn')
 const popup = document.getElementsByClassName('detail-pop-up')[0];
 const accordionBtn = document.querySelector('.accordion-btn');
 const accordionOverlay = document.querySelector('.acc-overlay');
@@ -48,19 +49,27 @@ button2.onclick = function(){
 	button1.classList.remove('hide-button');
 };
 
-detailBtn.onclick = function(){
-	popup.classList.add('show-popup');
-	detailBtn.classList.add('hide-btn');
-	removebtn.classList.add('show-btn');
-};
-
-removebtn.onclick = function(){
-	popup.classList.remove('show-popup');
-	removebtn.classList.remove('show-btn');
-	detailBtn.classList.remove('hide-btn');
-};
-
-accordionBtn.onclick = function(){
+function check(){
+	if (accordionBtn != null) {
+		accordionBtn.onclick = function(){
 	accordionOverlay.classList.toggle('show-example');
 	console.log('btn working');
-};
+		}
+	}
+}
+
+
+detailBtn.onclick = function(){
+modal.style.display = "block";
+console.log("modal should work")
+}
+
+modalClose.onclick = function(){
+	modal.style.display = "none";
+}
+
+window.onclick = function(event){
+	if (event.target == modal){
+		modal.style.display = "none";
+	}
+}
