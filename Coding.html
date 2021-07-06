@@ -44,8 +44,8 @@
 			<div class="hero">
 				<h1 class="text-effect">Coding examples</h1>	
 			</div>
-				<div class="main-content">
-					 <div>
+				<div class="main-content2">
+					 <div class="parent-flex">
 					  <div class="coding-box">
 						<code class="example">
 <pre>
@@ -65,23 +65,59 @@
 </pre>
 						</code>
 					  </div>
-					  <h2 id="example-1">Coding Example 1<button class="accordion-btn">Show</button></h2>
-					  <div class="p-container">
-					  	<div class="acc-overlay">
-						  <p class="explanation">This piece of code seen above is code used to style all the big images you can see on all of these pages, lets break it down!</p>
-						  	<p class="explanation">When styling a page the first thing to include in a code block is what you're styling by adding in a class or ID name, as you can see,
-						  	this one is called hero meaning all of the hero images on screen, next we tell the computer how we want the images placed on the screen</p>
-						  	<p class="explanation">We tell the computer to decide for itself what width it should be in comparison to its parent, we then tell the computer we want the image to be as tall as the screen!</p>
-						  	<p class="explanation">All of the 'background' rules you see just tell the computer that the images is a background image and we then tell it how we want it placed on the screen.</p>
-						  	<p class="explanation">Next comes the display, dont worry about this too much all we are saying here is we want the image to be flex meaning flexable and have the properties of 'flexbox', the image is already flexibly placed but now we can arrange it's children in a flexible way too!</p>
-						  	<p class="explanation">The position you can see here is set to relative! This is a unusual position, what this does is it turns this element into an anchor point for other elements, meaning that I can place other elements so long as they are 'children' relative to the image, you can see here that we have something called 'flex-direction' which is set to column, this tells the parent being the image to align its children into columns as you can see on the main page!</p>
-						  	<p class="explanation">Lastly I want to talk about the last three properties, two of which are very similar, the 'justify-content' and 'align-items' which are both set to center, are both very similar in the fact they align their children in the middle of their parent element the key difference is how they do this, 'justify-content' aligns its children on the main axis whilst the 'aling-items' aligns its children on the cross axis, using these together lets me place the items where I need them to be with ease. </p>
-						  	<p class="explanation">Last but not least lets look into the weird negative value of 'margin-right' the reason I did this is due to the fact I set margins down the right and left of the page so I had universal margins for all of my content, to do this I set these margins on the body of the page meaning the image was affected also, nobody wants an image that's cut off by 50px! So the final step I took was to tell the image to ignore those preset margins I added by giving it a negative margin, essentially telling the image to grow past its container.</p>
-					  	</div>
+					  <h2 id="example-1">Coding Example 1<button class="acc-title">Show</button></h2>
+					  <div class="accordion">
+					  	    <div class="acc-container">
+								<p class="explanation">This piece of code seen above is code used to style all the big images you can see on all of these pages, lets break it down!</p>
+								<p class="explanation">When styling a page the first thing to include in a code block is what you're styling by adding in a class or ID name, as you can see,
+								this one is called hero meaning all of the hero images on screen, next we tell the computer how we want the images placed on the screen</p>
+								<p class="explanation">We tell the computer to decide for itself what width it should be in comparison to its parent, we then tell the computer we want the image to be as tall as the screen!</p>
+								<p class="explanation">All of the 'background' rules you see just tell the computer that the images is a background image and we then tell it how we want it placed on the screen.</p>
+								<p class="explanation">Next comes the display, dont worry about this too much all we are saying here is we want the image to be flex meaning flexable and have the properties of 'flexbox', the image is already flexibly placed but now we can arrange it's children in a flexible way too!</p>
+								<p class="explanation">The position you can see here is set to relative! This is a unusual position, what this does is it turns this element into an anchor point for other elements, meaning that I can place other elements so long as they are 'children' relative to the image, you can see here that we have something called 'flex-direction' which is set to column, this tells the parent being the image to align its children into columns as you can see on the main page!</p>
+								<p class="explanation">Lastly I want to talk about the last three properties, two of which are very similar, the 'justify-content' and 'align-items' which are both set to center, are both very similar in the fact they align their children in the middle of their parent element the key difference is how they do this, 'justify-content' aligns its children on the main axis whilst the 'aling-items' aligns its children on the cross axis, using these together lets me place the items where I need them to be with ease. </p>
+								<p class="explanation">Last but not least lets look into the weird negative value of 'margin-right' the reason I did this is due to the fact I set margins down the right and left of the page so I had universal margins for all of my content, to do this I set these margins on the body of the page meaning the image was affected also, nobody wants an image that's cut off by 50px! So the final step I took was to tell the image to ignore those preset margins I added by giving it a negative margin, essentially telling the image to grow past its container.</p>
+					  	    </div>
 					  	</div>
 					</div>
+					<div class="parent-flex">
+						<div class="coding-box2">
+					  			<h2 class="SQL-title">SQL Table Structure<button class="Expand">Expand Table</button></h2>
+					  			<div class="hidden-img-overlay"><img alt="table image" src="TableStructure.jpg"></div>
+					  			<div class="p-container2">
+					  				<p class="SQL-table-explanation">Above is an image of the representaion of a database in a relational table format, this database has a total of 9 tables that interact with eachother to make a database. <br><br> In the next example you will see how I use an SQL query to naviagte this database to retrieve the desired results.</p>
+					  			</div>
+					  		</div>	
+					  	</div>
+					  	<div class="parent-flex">
+					  		<div class="coding-box coding-box3">
+					  			<code class="example">
+<pre>
+    SELECT CONCAT(act_fname, act_lname) 
+    AS "Actors Full Name" FROM actor
+    WHERE act_id IN(
+    SELECT act_id FROM movie_cast
+    GROUP BY act_id
+    ORDER BY COUNT(act_id) DESC LIMIT 5
+    )
+    ORDER BY act_fname DESC
+</pre>					  				
+					  			</code>
+					  			<h2 class="SQL-explanation-title">SQL code explanation<button class="acc-title2">Show</button></h2>
+					  			<div class="accordion2">
+					  				<div class="acc-container">
+					  					<p class="SQL-explanation">The above code is an SQL query that was made with a particular outcome in mind, as you can see from the table on the left there are 9 tables in this database, I used this query to navigate the table, lets break it down.<br></p>
+					  					<p class="SQL-explanation">on the first line I select 2 values or columns from the actors table and concatinate them so they will appear together under a new name of "Actors Full Name"<br> I then use the WHERE IN function to creat a subquery/ nested query, here is where I connect the tables together using the common value between them, you can see this on the table in the previous box, the common value shared is the act_id number this connect the actor and movie_cast tables, and since they are connected I can pull information from both tables and create a new table of information that I desire.</p>
+					  					<p class="SQL-explanation">As you can see I then wrote SELECT meaning I want to select the key they both share, I then ask for the results to be grouped together by id, I then tell the information to be ordered by the count of act_id I then flip the order in which the information is displayed by using the DESC command which is short for descending, I then didn't want 100 results so I limited the results to show the top 5.<br><br>
+					  					I then finally take the reuslts of the subquery and ordered it by the first names of the actors, in the next paragraph I will tell you what this query actually does!</p>
+					  					<p class="SQL-explanation">So now we have a solid understanding of the code but what does it do? Well the idea I went for is that I wanted to find out the name of the actor who has been in the most movies, meaning I needed information from multiple tables, I achieved my query by starting off with just actor full names, to then find out who has been in the most movies, I used each actors actor id, I then crossreferenced their actor id with a movie cast list to see what film they played in and how many films that came up to, once this information was recieved I had to find a way to relay that back to my query and ask the right questions from there, I then asked who has the most movie roles and displayed that in an order limiting this to the top 5 actors who have the most movie roles, and just for ease I ordered them to be shown by the actors first name.</p>
+					  				</div>
+					  			</div>
+					  		</div>	
+					  	</div>
 				</div>
-			</div>	
+			</div>
+			<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 			<script src="main.js"></script>
 		</body>
 		</html>

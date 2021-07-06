@@ -17,7 +17,12 @@ const modalClose = document.querySelector('.closer-btn')
 const popup = document.getElementsByClassName('detail-pop-up')[0];
 const accordionBtn = document.querySelector('.accordion-btn');
 const accordionOverlay = document.querySelector('.acc-overlay');
+const secondAccordionBtn = document.querySelector('.accordion-btn2')
+const secondAccordionOverlay = document.querySelector('.acc-overlay2')
 
+//variables for the SQL table expansion modal.
+const expandBtn = document.querySelector('.Expand')
+const overlayImage = document.querySelector('.hidden-img-overlay')
 
 element.innerText = "";
 
@@ -59,6 +64,18 @@ function check(){
 }
  check()
 
+function check2(){
+	if (secondAccordionBtn != null) {
+		secondAccordionBtn.onclick = function(){
+	secondAccordionOverlay.classList.toggle('show-example');
+	console.log('btn working');
+		}
+	}
+}
+ check2()
+
+
+
 function modalPop(){
 if (detailBtn != null) {
 detailBtn.onclick = function(){
@@ -79,8 +96,51 @@ modalClose.onclick = function(){
 
 modalCheck()
 
+function tableExpand(){
+	if (expandBtn != null){
+		expandBtn.onclick = function(){
+			overlayImage.style.display = "block";
+		}
+	}
+}
+
+tableExpand()
+
+function closeTable(){
+	if(overlayImage !=null){
+		overlayImage.onclick = function(){
+			overlayImage.style.display = "none";
+		}
+	}
+}
+
+closeTable()
+
 window.onclick = function(event){
 	if (event.target == modal){
 		modal.style.display = "none";
 	}
 }
+
+
+$('.acc-title').on("click", function(){
+	let accord = $(".accordion");
+	if(!open){
+		$(accord).slideDown(400);
+		open = true;
+	}else{
+		$(accord).slideUp(400);
+		open = false;
+	}
+});
+
+$('.acc-title2').on("click", function(){
+	let accord = $(".accordion2");
+	if(!open){
+		$(accord).slideDown(400);
+		open = true;
+	}else{
+		$(accord).slideUp(400);
+		open = false;
+	}
+});
